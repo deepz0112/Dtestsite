@@ -19,6 +19,9 @@
     ]
   },
   {
+    "id": "basicdetail"
+  },
+  {
     "id": "cards",
     "components": [
       "card"
