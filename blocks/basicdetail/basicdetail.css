@@ -2,9 +2,12 @@
     
     float: left;
     width: 100%;
-    margin-top: 25px;
+            padding: 25px 15px;
+        background: white;
+    clear: both;
 
      @media (width >= 1024px) {
+      background:transparent  ;
         padding: 0px;
      }
 
@@ -69,40 +72,70 @@
   align-items: baseline;
   position: relative;
   padding-left:25px;
+  left:0;
+  
   order:4;
   @media (width >= 1024px) {
     order: 5px;
+    left:0;
+    padding-left:25px;
     flex: 0 0 90%;
   }
 
 }
-input[type="checkbox"] {
-  position:absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
+/* make the native checkbox visually hidden but accessible */
+.checkbox-group input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+  appearance: none;
+  top:5px;
+  left:5px;
+  z-index:100;
 }
-.checkmark{
-      position: absolute;
-    top: 5px;
-    left: 0;
-            border: 1px solid #666;
-        height: 18px;
-        width: 18px;
+
+
+/* the visible box */
+.checkbox-group .checkmark {
+  top: 5px;
+  left:5px;
+  z-index: 1;
+    position: absolute;  /* relative to keep ::after positioned inside */
+  display: inline-block;
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #666;
+  border-radius: 2px;
+  box-sizing: border-box;
+  margin-right: 8px; /* space between box and label text */
 }
-.checkmark:after {
-  left: 1px;
-        top: 1px;
-            content: "";
-    position: absolute;
-    display: block;
-    width: 12px;
-    height: 12px;
-    margin: 1px;
-    background: #2b33a2;
-    border: 1px solid #2b33a2;
-    border-width: 0 2px 2px 0;
+
+/* hidden tick by default */
+.checkbox-group .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 4px;
+  top: 0px;
+  width: 6px;
+  height: 11px;
+  border: solid #fff;          /* tick color */
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* show a filled background on checked and reveal tick */
+.checkbox-group input[type="checkbox"]:checked + .checkmark {
+  background: #2b33a2;
+  border-color: #2b33a2;
+}
+
+.checkbox-group input[type="checkbox"]:checked + .checkmark::after {
+  display: block;
 }
 .form-group button{
       width: 100%;
@@ -146,4 +179,15 @@ input[type="checkbox"] {
 .form-group .dob{
   order:3
 }
-
+font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-stretch: 100%;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/roboto/v51/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3GUBHMdazTgWw.woff2) format('woff2');
+    unicode-range: U +0460 -052F, U +1C80 -1C8A, U +20B4, U +2DE0 -2DFF, U + A640-A69F, U + FE2E-FE2F;
+}
+html{
+  font-size:22px;
+}

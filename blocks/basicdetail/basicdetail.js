@@ -19,17 +19,17 @@ export default async function decorate(block) {
         <form id="basic-detail-form" action="/api/sitecore/TrvFmpApi/CustomerEnquiry" method="POST" novalidate>
         <div class="form-group-container">
         <div class="form-group">
-            <input type="text" id="name" class="inputfield" name="name" placeholder="Full Name*" required>
+            <input type="text" id="name" class="inputfield" name="name" placeholder="Full Name *" required>
             <em id="name-error" class="error invalid-feedback">${NAME_EMPTY}</em>
           </div>
 
           <div class="form-group">
-            <input type="email" id="email" name="email" class="inputfield" placeholder="Email*" required>
+            <input type="email" id="email" name="email" class="inputfield" placeholder="Email *" required>
             <em id="email-error" class="error invalid-feedback">${EMAIL_INVALID}</em>
           </div>
 
           <div class="form-group">
-            <input type="date" id="dob" class="inputfield datepicker" name="dob" required>
+            <input type="date" id="dob" class="inputfield datepicker" name="dob" placeholder="Date of Birth *" required>
             <em id="dob-error" class="error invalid-feedback">${DOB_EMPTY}</em>
           </div>
 
@@ -141,7 +141,16 @@ export default async function decorate(block) {
       inputDob.classList.remove('input-error');
     }
   });
+const checkbox = block.querySelector('#terms');
+const checkmark = block.querySelector('.checkmark');
 
+// When clicking the custom box
+checkmark.addEventListener('click', () => {
+  checkbox.checked = !checkbox.checked;
+
+  // Trigger change event if needed
+  checkbox.dispatchEvent(new Event('change'));
+});
   // Submit handler
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -236,4 +245,5 @@ export default async function decorate(block) {
       submitBtn.textContent = originalBtnText;
     }
   });
+
 }
