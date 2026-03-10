@@ -21,6 +21,56 @@
       "id": "basicdetail",
       "fields": [
         {
+          "component": "text",
+          "name": "label1",
+          "label": "Label 1"
+        },
+        {
+          "component": "text",
+          "name": "label1ErrorMessage",
+          "label": "Label 1 Error Message"
+        },
+        {
+          "component": "text",
+          "name": "label2",
+          "label": "Label 2"
+        },
+        {
+          "component": "text",
+          "name": "label2ErrorMessage",
+          "label": "Label 2 Error Message"
+        },
+        {
+          "component": "text",
+          "name": "label3",
+          "label": "Label 3"
+        },
+        {
+          "component": "text",
+          "name": "label3ErrorMessage",
+          "label": "Label 3 Error Message"
+        },
+        {
+          "component": "text",
+          "name": "cta",
+          "label": "CTA"
+        },
+        {
+          "component": "aem-content",
+          "name": "ctaLink",
+          "label": "CTA Link"
+        },
+        {
+          "component": "text",
+          "name": "termsAndConditions",
+          "label": "Terms and Conditions"
+        },
+         {
+          "component": "text",
+          "name": "termsErrorMessage",
+          "label": "Terms and Conditions Error Message"
+        },
+        {
           "component": "aem-content",
           "name": "reference",
           "label": "Reference"
