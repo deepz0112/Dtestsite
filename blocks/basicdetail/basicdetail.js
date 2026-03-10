@@ -41,7 +41,7 @@ export default async function decorate(block) {
               I am explicitly soliciting calls/messages and allowing Maruti Suzuki & partners to use this info per the <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">MSIL privacy policy</a>.
               The loan process would be subject to <a href="javascript:void(0);" data-toggle="modal" data-target=".terms-condition-popup">these terms</a>.
             </label>
-            <em id="terms-error" class="error invalid-feedback">${TERMS_ERROR}</em>
+            <div id="terms-error" class="error invalid-feedback">${TERMS_ERROR}</div>
             <span class="checkmark"></span>
           </div>
 
