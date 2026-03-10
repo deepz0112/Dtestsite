@@ -1,27 +1,29 @@
-.cards > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+.basic-detail-container{
+  background: #F7F7F7;
+    padding: 35px;
+    float: left;
+    width: 100%;
+    margin-top: 25px;
 }
-
-.cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+.basic-detail-container h2{
+  font-size: 1.5rem;
+    color: #000000;
+    float: left;
+    width: 100%;
+    font-weight: normal;
+  margin-bottom: 20px;
 }
-
-.cards .cards-card-body {
-  margin: 16px;
+.basic-detail-container .form-group .inputfield{
+     background: #FFFFFF;
+    border: rgba(210, 210, 210, 0.5) solid 1px !important;
+    height: 64px;
+    color: #000000;
+    padding-top: 10px;
+    font-size: 1.125rem;
 }
-
-.cards .cards-card-image {
-  line-height: 0;
-}
-
-.cards > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.form-group-container{
+      float: left;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }

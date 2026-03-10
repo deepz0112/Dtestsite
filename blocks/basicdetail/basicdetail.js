@@ -24,18 +24,18 @@ console.log('head1', head1);
       <form id="basic-detail-form" action="${CTALink}" method="POST" novalidate>
         <div class="form-group-container">
         <div class="form-group">
-          <input type="text" id="label1" name="name" placeholder="${Label1}" required>
+          <input type="text" id="label1" class="inputfield" name="name" placeholder="${Label1}" required>
           <em id="name-error" class="error invalid-feedback">${Error1}</em>
       
       </div>
        
        <div class="form-group">
-          <input type="email" id="label2" name="email" placeholder="${Label2}*" required>
+          <input type="email" id="label2" name="email" class="inputfield" placeholder="${Label2}*" required>
           <em id="email-error" class="error invalid-feedback">${Error2}</em>
       
       </div>
       <div class="form-group">
-          <input type="text" id="label3" name="dob" placeholder="${Label3}*" required>
+          <input type="text" id="label3" class="inputfield" name="dob" placeholder="${Label3}*" required>
           <em id="dob-error" class="error invalid-feedback">${Error3}</em>
       
       </div>
