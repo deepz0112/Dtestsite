@@ -61,7 +61,7 @@
           "label": "CTA Link"
         },
         {
-          "component": "text",
+          "component": "richtext",
           "name": "termsAndConditions",
           "label": "Terms and Conditions"
         },
