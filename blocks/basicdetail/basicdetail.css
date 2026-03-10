@@ -1,5 +1,4 @@
 .basic-detail-container {
-    background: #f7f7f7;
     padding: 35px;
     float: left;
     width: 100%;
@@ -38,6 +37,7 @@
     font-size: 93%;
     color: #dc3545;
     font-weight: normal;
+    display: none;
 }
 
 .form-group-container {
@@ -46,6 +46,10 @@
     flex-flow: column;
     justify-content: space-between;
     width: 100%;
+}
+.form-group{
+          width: 100%;
+        margin-bottom: 15px;
 }
 .form-group-container .checkbox-group{
   display: flex;
