@@ -1,7 +1,5 @@
 export default async function decorate(block) {
-  
-
-console.log('head1', head1);
+ 
   block.innerHTML = `
     <div class="basic-detail-container">
 
