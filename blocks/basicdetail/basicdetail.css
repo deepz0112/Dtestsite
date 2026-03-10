@@ -1,29 +1,49 @@
-.basic-detail-container{
-  background: #F7F7F7;
+.basic-detail-container {
+    background: #f7f7f7;
     padding: 35px;
     float: left;
     width: 100%;
     margin-top: 25px;
 }
-.basic-detail-container h2{
-  font-size: 1.5rem;
+
+.basic-detail-container h2 {
+    font-size: 1rem;
+    font-weight: 600;
     color: #000000;
     float: left;
+    margin-bottom: 20px;
     width: 100%;
-    font-weight: normal;
-  margin-bottom: 20px;
+    @media (width >= 1024px) {
+        font-size: 1.5rem;
+        font-weight: normal;
+    }
 }
-.basic-detail-container .form-group .inputfield{
-     background: #FFFFFF;
+.basic-detail-container .form-group .inputfield {
+  
+        background: #FFFFFF;
     border: rgba(210, 210, 210, 0.5) solid 1px !important;
-    height: 64px;
+    height: 50px;
+    font-size: 1rem;
     color: #000000;
     padding-top: 10px;
-    font-size: 1.125rem;
+    line-height: normal;
+    font-weight: normal;
+    width: 100%;
+    padding: 20px 15px 10px 15px;
+  }
+.form-group .error {
+      font-style: italic;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 93%;
+    color: #dc3545;
+    font-weight: normal;
 }
-.form-group-container{
-      float: left;
+
+.form-group-container {
+    float: left;
     display: flex;
+    flex-flow: row;
     justify-content: space-between;
     width: 100%;
 }
