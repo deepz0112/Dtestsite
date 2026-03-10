@@ -1,4 +1,7 @@
 export default async function decorate(block) {
+  const nameError = 'Please enter your name';
+  const emailError2 ='Please enter a valid email address';
+  const dobError3 = 'Please enter your date of birth';
  
   block.innerHTML = `
     <div class="basic-detail-container">
@@ -19,7 +22,7 @@ export default async function decorate(block) {
       
       </div>
       <div class="form-group">
-          <input type="text" id="dob" class="inputfield" name="dob" placeholder="${Label3}*" required>
+          <input type="date" id="dob" class="inputfield datepicker" name="dob" placeholder="Date of Birth*" required>
           <em id="dob-error" class="error invalid-feedback">${dobError3}</em>
       
       </div>
