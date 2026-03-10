@@ -34,8 +34,9 @@ export default async function decorate(block) {
                             <div class="check-err"></div>
                             <span class="checkmark"></span></label>
          <span class="checkmark"></span>
+          <div id="terms-error" class="error invalid-feedback">You must agree to the terms and conditions</div>
       </div>
-       <div id="terms-error" class="error invalid-feedback">You must agree to the terms and conditions</div>
+      
       <div class="form-group">
           <button type="submit">Submit</button>
       </div>
