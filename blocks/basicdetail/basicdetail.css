@@ -43,7 +43,7 @@
 .form-group-container {
     float: left;
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     justify-content: space-between;
     width: 100%;
 }
