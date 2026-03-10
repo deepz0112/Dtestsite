@@ -1,51 +1,41 @@
 export default async function decorate(block) {
-  const [heading, label1, error1, label2, error2, label3, error3, ctalabel, ctalink, termstext, termserror, termslink] = Array.from(block.children).map((el, i) =>
-    i === 2 ? el?.querySelector('img')?.src || '' : el?.textContent?.trim() || ''
-  );
-  const head1 = heading || '';
-  const Label1 = label1 || 'Full Name';
-  const Error1 = error1 || 'Please enter your full name';
-  const Label2 = label2 || 'Email';
-  const Error2 = error2 || 'Please enter a valid email address';
-  const Label3 = label3 || 'Date Of Birth';
-  const Error3 = error3 || 'Please enter your date of birth';
-  const CTALabel = ctalabel || 'Submit';
-  const CTALink = ctalink || '#';
-  const TermsText = termstext || 'I agree to the terms and conditions';
-  const TermsError = termserror || 'You must agree to the terms and conditions';
-  const TermsLink = termslink || '#';
+  
 
 console.log('head1', head1);
   block.innerHTML = `
     <div class="basic-detail-container">
 
       <div class="form-container">
-      <h2>${head1}</h2>
-      <form id="basic-detail-form" action="${CTALink}" method="POST" novalidate>
+      <h2>Help us get acquainted with you.</h2>
+      <form id="basic-detail-form" action="/api/sitecore/TrvFmpApi/CustomerEnquiry" method="POST" novalidate>
         <div class="form-group-container">
         <div class="form-group">
-          <input type="text" id="label1" class="inputfield" name="name" placeholder="${Label1}" required>
-          <em id="name-error" class="error invalid-feedback">${Error1}</em>
+          <input type="text" id="name" class="inputfield" name="name" placeholder="Full Name*" required>
+          <em id="name-error" class="error invalid-feedback">${nameError}</em>
       
       </div>
        
        <div class="form-group">
-          <input type="email" id="label2" name="email" class="inputfield" placeholder="${Label2}*" required>
-          <em id="email-error" class="error invalid-feedback">${Error2}</em>
+          <input type="email" id="email" name="email" class="inputfield" placeholder="Email*" required>
+          <em id="email-error" class="error invalid-feedback">${emailError2}</em>
       
       </div>
       <div class="form-group">
-          <input type="text" id="label3" class="inputfield" name="dob" placeholder="${Label3}*" required>
-          <em id="dob-error" class="error invalid-feedback">${Error3}</em>
+          <input type="text" id="dob" class="inputfield" name="dob" placeholder="${Label3}*" required>
+          <em id="dob-error" class="error invalid-feedback">${dobError3}</em>
       
       </div>
       <div class="form-group checkbox-group">
           <input type="checkbox" id="terms" name="terms" required>
-          <label for="terms"><a href="${TermsLink}" target="_blank">${TermsText}</a></label>
-          <div id="terms-error" class="error invalid-feedback">You must agree to the terms and conditions</div>
+          <label for="terms">I Accept the <a href="/terms-of-use" target="_blank" rel="noopener noreferrer" data-wa-link="_undefined_Term of Use._undefined">Term of Use.</a> I am explicitly soliciting a call and message via whatsapp and other medium &amp; I am allowing this information to be used by Maruti Suzuki &amp; its partners to customize the loan offerings to my profile in accordance with the  <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" data-wa-link="_undefined_MSIL privacy policy._undefined">MSIL privacy policy.</a> The loan process would be subject to <a href="javascript:void(0);" data-toggle="modal" data-target=".terms-condition-popup" data-wa-link="_undefined_these terms_undefined">these terms</a>.
+                            <input type="checkbox" required="required" id="policyy" name="policyy" class="policyy" data-error="Please Accept the Terms of Use  Checkbox">
+                            <div class="check-err"></div>
+                            <span class="checkmark"></span></label>
+         
       </div>
+       <div id="terms-error" class="error invalid-feedback">You must agree to the terms and conditions</div>
       <div class="form-group">
-          <button type="submit">${CTALabel}</button>
+          <button type="submit">Submit</button>
       </div>
       </form>
       </div>
