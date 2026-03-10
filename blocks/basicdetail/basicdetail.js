@@ -1,23 +1,59 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
-import { moveInstrumentation } from '../../scripts/scripts.js';
+export default async function decorate(block) {
+  const [head1, label1, error1, label2, error2, label3, label3, ctalabel, ctalink, termstext, termserror, termslink] = Array.from(block.children).map((el, i) =>
+    i === 2 ? el?.querySelector('img')?.src || '' : el?.textContent?.trim() || ''
+  );
+  const bannerImg = head1 || '';
+  const Label1 = label1 || 'Full Name';
+  const Error1 = error1 || 'Please enter your full name';
+  const Label2 = label2 || 'Email';
+  const Error2 = error2 || 'Please enter a valid email address';
+  const Label3 = label3 || 'Date Of Birth';
+  const Error3 = error3 || 'Please enter your date of birth';
+  const CTALabel = ctalabel || 'Submit';
+  const CTALink = ctalink || '#';
+  const TermsText = termstext || 'I agree to the terms and conditions';
+  const TermsError = termserror || 'You must agree to the terms and conditions';
+  const TermsLink = termslink || '#';
+  const titleTag = block.dataset.titletag || 'h2';
 
-export default function decorate(block) {
-  /* change to ul, li */
-  const ul = document.createElement('ul');
-  [...block.children].forEach((row) => {
-    const li = document.createElement('li');
-    moveInstrumentation(row, li);
-    while (row.firstElementChild) li.append(row.firstElementChild);
-    [...li.children].forEach((div) => {
-      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
-      else div.className = 'cards-card-body';
-    });
-    ul.append(li);
-  });
-  ul.querySelectorAll('picture > img').forEach((img) => {
-    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-    moveInstrumentation(img, optimizedPic.querySelector('img'));
-    img.closest('picture').replaceWith(optimizedPic);
-  });
-  block.replaceChildren(ul);
+
+  block.innerHTML = `
+    <div class="basic-detail-container">
+
+      <div class="form-container">
+      <h2>${head1}</h2>
+      <form id="basic-detail-form" action="${CTALink}" method="POST" novalidate>
+        <div class="form-group-container">
+        <div class="form-group">
+          <input type="text" id="label1" name="name" placeholder="${Label1}" required>
+          <em id="name-error" class="error invalid-feedback">Please enter full name</em>
+      
+      </div>
+        <div class="form-group">
+          <input type="text" id="label1" name="name" placeholder="${Label1}*" required>
+          <em id="name-error" class="error invalid-feedback">Please enter ${Label1}</em>
+      
+      </div>
+       <div class="form-group">
+          <input type="email" id="label2" name="email" placeholder="${Label2}*" required>
+          <em id="email-error" class="error invalid-feedback">Please enter ${Label2}</em>
+      
+      </div>
+      <div class="form-group">
+          <input type="text" id="label3" name="dob" placeholder="${Label3}*" required>
+          <em id="dob-error" class="error invalid-feedback">Please enter ${Label3}</em>
+      
+      </div>
+      <div class="form-group checkbox-group">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms"><a href="${TermsLink}" target="_blank">${TermsText}</a></label>
+          <em id="terms-error" class="error invalid-feedback">You must agree to the terms and conditions</em>
+      </div>
+      <div class="form-group">
+          <button type="submit">${CTALabel}</button>
+      </div>
+      </form>
+      </div>
+    </div>
+     `;
 }

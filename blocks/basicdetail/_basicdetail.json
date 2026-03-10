@@ -20,10 +20,20 @@
     {
       "id": "basicdetail",
       "fields": [
+         {
+          "component": "text",
+          "name": "head1",
+          "label": "Heading 1"
+        },
         {
           "component": "text",
           "name": "label1",
           "label": "Label 1"
+        },
+        {
+          "component": "text",
+          "name": "input1",
+          "label": "Input 1"
         },
         {
           "component": "text",
@@ -37,6 +47,11 @@
         },
         {
           "component": "text",
+          "name": "input2",
+          "label": "Input 2"
+        },
+        {
+          "component": "text",
           "name": "label2ErrorMessage",
           "label": "Label 2 Error Message"
         },
@@ -44,6 +59,11 @@
           "component": "text",
           "name": "label3",
           "label": "Label 3"
+        },
+        {
+          "component": "text",
+          "name": "input3",
+          "label": "Input 3"
         },
         {
           "component": "text",
