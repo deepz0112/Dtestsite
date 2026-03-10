@@ -1,8 +1,8 @@
 export default async function decorate(block) {
-  const [head1, label1, error1, label2, error2, label3, label3, ctalabel, ctalink, termstext, termserror, termslink] = Array.from(block.children).map((el, i) =>
+  const [heading, label1, error1, label2, error2, label3, error3, ctalabel, ctalink, termstext, termserror, termslink] = Array.from(block.children).map((el, i) =>
     i === 2 ? el?.querySelector('img')?.src || '' : el?.textContent?.trim() || ''
   );
-  const head1 = head1 || '';
+  const head1 = heading || '';
   const Label1 = label1 || 'Full Name';
   const Error1 = error1 || 'Please enter your full name';
   const Label2 = label2 || 'Email';
