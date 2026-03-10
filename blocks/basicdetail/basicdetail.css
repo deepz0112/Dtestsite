@@ -46,10 +46,16 @@
     flex-flow: column;
     justify-content: space-between;
     width: 100%;
+    @media (width >= 1024px) {
+      flex-flow: row;
+    }
 }
 .form-group{
           width: 100%;
         margin-bottom: 15px;
+      @media (width >= 1024px) {
+        width:30%
+      }
 }
 .form-group-container .checkbox-group{
   display: flex;
