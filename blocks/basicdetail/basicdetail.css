@@ -106,6 +106,14 @@ input[type="checkbox"] {
     outline: none;
 order:5
 }
+.form-group button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+.form-status {
+    font-size: 0.95rem;
+    color: #000;
+}
 .form-group .name{
   order:1
 }
