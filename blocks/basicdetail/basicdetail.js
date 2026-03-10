@@ -32,7 +32,7 @@ export default async function decorate(block) {
                             <input type="checkbox" required="required" id="policyy" name="policyy" class="policyy" data-error="Please Accept the Terms of Use  Checkbox">
                             <div class="check-err"></div>
                             <span class="checkmark"></span></label>
-         
+         <span class="checkmark"></span>
       </div>
        <div id="terms-error" class="error invalid-feedback">You must agree to the terms and conditions</div>
       <div class="form-group">
