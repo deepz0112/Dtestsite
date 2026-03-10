@@ -31,7 +31,7 @@
     width: 100%;
     padding: 20px 15px 10px 15px;
   }
-.form-group .error {
+ .error {
       font-style: italic;
     width: 100%;
     margin-top: 0.25rem;
@@ -52,6 +52,7 @@
   align-items: baseline;
   position: relative;
   padding-left:10%;
+  order:4
 }
 input[type="checkbox"] {
   position:absolute;
@@ -83,3 +84,32 @@ input[type="checkbox"] {
     border: 1px solid #2b33a2;
     border-width: 0 2px 2px 0;
 }
+.form-group button{
+      width: 100%;
+    text-align: center;
+    height: 64px;
+    font-size: 1.3125rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2b3395;
+    padding: 12px 10px;
+    border-radius: 6px;
+    border: 1px solid #2b3395;
+    outline: none;
+order:5
+}
+.form-group .name{
+  order:1
+}
+
+.form-group .email{
+  order:2
+}
+.form-group .dob{
+  order:3
+}
+
