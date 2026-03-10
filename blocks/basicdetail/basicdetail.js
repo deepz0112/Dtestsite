@@ -2,7 +2,7 @@ export default async function decorate(block) {
   const [head1, label1, error1, label2, error2, label3, label3, ctalabel, ctalink, termstext, termserror, termslink] = Array.from(block.children).map((el, i) =>
     i === 2 ? el?.querySelector('img')?.src || '' : el?.textContent?.trim() || ''
   );
-  const bannerImg = head1 || '';
+  const head1 = head1 || '';
   const Label1 = label1 || 'Full Name';
   const Error1 = error1 || 'Please enter your full name';
   const Label2 = label2 || 'Email';
@@ -14,9 +14,8 @@ export default async function decorate(block) {
   const TermsText = termstext || 'I agree to the terms and conditions';
   const TermsError = termserror || 'You must agree to the terms and conditions';
   const TermsLink = termslink || '#';
-  const titleTag = block.dataset.titletag || 'h2';
 
-
+console.log('head1', head1);
   block.innerHTML = `
     <div class="basic-detail-container">
 
@@ -26,22 +25,18 @@ export default async function decorate(block) {
         <div class="form-group-container">
         <div class="form-group">
           <input type="text" id="label1" name="name" placeholder="${Label1}" required>
-          <em id="name-error" class="error invalid-feedback">Please enter full name</em>
+          <em id="name-error" class="error invalid-feedback">${Error1}</em>
       
       </div>
-        <div class="form-group">
-          <input type="text" id="label1" name="name" placeholder="${Label1}*" required>
-          <em id="name-error" class="error invalid-feedback">Please enter ${Label1}</em>
-      
-      </div>
+       
        <div class="form-group">
           <input type="email" id="label2" name="email" placeholder="${Label2}*" required>
-          <em id="email-error" class="error invalid-feedback">Please enter ${Label2}</em>
+          <em id="email-error" class="error invalid-feedback">${Error2}</em>
       
       </div>
       <div class="form-group">
           <input type="text" id="label3" name="dob" placeholder="${Label3}*" required>
-          <em id="dob-error" class="error invalid-feedback">Please enter ${Label3}</em>
+          <em id="dob-error" class="error invalid-feedback">${Error3}</em>
       
       </div>
       <div class="form-group checkbox-group">
