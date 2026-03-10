@@ -63,11 +63,11 @@
   display: flex;
   align-items: baseline;
   position: relative;
-  padding-left:10%;
+  padding-left:25px;
   order:4;
   @media (width >= 1024px) {
     order: 5px;
-    flex: 0 0 100%;
+    flex: 0 0 90%;
   }
 
 }
@@ -80,7 +80,7 @@ input[type="checkbox"] {
 }
 .checkmark{
       position: absolute;
-    top: 0;
+    top: 5px;
     left: 0;
     border-radius: 0;
     background: none;
