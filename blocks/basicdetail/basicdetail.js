@@ -1,5 +1,6 @@
 export default async function decorate(block) {
   // Guard: don't render twice
+  console.log('Decorating basic detail block');
   if (block.dataset.decorated) return;
   block.dataset.decorated = 'true';
 
@@ -10,6 +11,7 @@ export default async function decorate(block) {
   const TERMS_ERROR = "You must agree to the terms and conditions";
 
   // Render markup
+  block.innerHTML='';
   block.innerHTML = `
     <div class="basic-detail-container">
       <div class="form-container">
@@ -39,6 +41,7 @@ export default async function decorate(block) {
               The loan process would be subject to <a href="javascript:void(0);" data-toggle="modal" data-target=".terms-condition-popup">these terms</a>.
             </label>
             <em id="terms-error" class="error invalid-feedback">${TERMS_ERROR}</em>
+            <span class="checkmark"></span>
           </div>
 
           <div class="form-group">
