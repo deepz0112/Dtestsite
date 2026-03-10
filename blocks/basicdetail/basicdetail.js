@@ -42,7 +42,7 @@ console.log('head1', head1);
       <div class="form-group checkbox-group">
           <input type="checkbox" id="terms" name="terms" required>
           <label for="terms"><a href="${TermsLink}" target="_blank">${TermsText}</a></label>
-          <em id="terms-error" class="error invalid-feedback">You must agree to the terms and conditions</em>
+          <div id="terms-error" class="error invalid-feedback">You must agree to the terms and conditions</div>
       </div>
       <div class="form-group">
           <button type="submit">${CTALabel}</button>
