@@ -17,7 +17,8 @@ export default async function decorate(block) {
       <div class="form-container">
         <h2>Help us get acquainted with you.</h2>
         <form id="basic-detail-form" action="/api/sitecore/TrvFmpApi/CustomerEnquiry" method="POST" novalidate>
-          <div class="form-group">
+        <div class="form-group-container">
+        <div class="form-group">
             <input type="text" id="name" class="inputfield" name="name" placeholder="Full Name*" required>
             <em id="name-error" class="error invalid-feedback">${NAME_EMPTY}</em>
           </div>
@@ -47,6 +48,7 @@ export default async function decorate(block) {
           <div class="form-group">
             <button type="submit" id="submit-btn">Submit</button>
           </div>
+          </div> 
         </form>
       </div>
     </div>
