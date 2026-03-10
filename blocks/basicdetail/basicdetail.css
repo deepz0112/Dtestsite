@@ -48,6 +48,8 @@
     width: 100%;
     @media (width >= 1024px) {
       flex-flow: row;
+       flex-wrap: wrap;
+  gap: 16px; /* optional spacing */
     }
 }
 .form-group{
@@ -65,6 +67,7 @@
   order:4;
   @media (width >= 1024px) {
     order: 5px;
+    flex: 0 0 100%;
   }
 
 }
