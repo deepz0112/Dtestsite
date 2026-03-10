@@ -3,7 +3,7 @@ export default async function decorate(block) {
   const nameError1="Please enter a valid name";
   const emailError2 = "Please enter a valid email address";
   const dobError3 = "Please enter your date of birth";
-  block.append("");
+  block.innerHTML="";
   block.innerHTML = `
     <div class="basic-detail-container">
 
